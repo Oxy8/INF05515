@@ -24,8 +24,8 @@ void conjunto_independente_maximo(const std::vector<int>& pesos) {
         return;
     }
     if (n == 1) {
-        std::cout << "Peso máximo: " << pesos[1] << std::endl;
-        std::cout << "Vertice: " << 1 << " peso: " << pesos[0] << std::endl;
+        std::cout << "Peso máximo: " << pesos[0] << std::endl;
+        std::cout << "Vertice: " << 0 << " peso: " << pesos[0] << std::endl;
         return;
     }
 
@@ -43,11 +43,11 @@ void conjunto_independente_maximo(const std::vector<int>& pesos) {
     for (int i = n - 1; i >= 0; ) {
         
         if (i == 0) {
-            std::cout << "Vertice: " << i << " peso: " << pesos[i-1] << std::endl;
+            std::cout << "Vertice: " << i << " peso: " << pesos[i] << std::endl;
             break; 
         }
         if (dp[i] > dp[i-1]) {
-            std::cout << "Vertice: " << i << " peso: " << pesos[i-1] << std::endl;
+            std::cout << "Vertice: " << i << " peso: " << pesos[i] << std::endl;
             i -= 2; 
         } else {
             i -= 1; 
